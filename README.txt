@@ -1,7 +1,7 @@
 Professional Practice Assignment 1 Report
 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------
 Naming and Organization:
 For our naming process, we named the tests similar to their respective tested- functions. For example, the bmiCalc function, defined in the main program, will be named bmiCalc_test for the respective testing.
 
@@ -9,10 +9,10 @@ For our structure, we decided to write the unit test cases based on each of the 
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-
 Setup and Execution Instructions:
 Download Python 3.7 from https://www.python.org/downloads/release/python-370/
 Download Pycharm from https://www.jetbrains.com/pycharm/download/
+
 
 1. Python 3.7 , which will be used to execute the program functionality and execute the testing, must first be downloaded from the link above. Download and install based on your OS.
 
