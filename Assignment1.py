@@ -16,7 +16,7 @@ def bmiCalc(height, weight):
                     print('Normal weight\n')
                 elif (bmiVal <= 25 and bmiVal >= 29.9):
                     print('Overweight\n')
-                elif (bmiVal > 0):
+                elif (bmiVal < 0):
                     print('Error - negative bmi')
                 else:
                     print('Obese\n')
