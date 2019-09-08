@@ -125,8 +125,7 @@ def pickAFunc():
                        '\n0 - Exit\n'
                        )
     if (funcOption == '1'):
-
-            getWeight = input('How much do you weigh?(lbs)\n')
+         getWeight = input('How much do you weigh?(lbs)\n')
             print('Next, at the prompt, please enter your height'
                   'in feet, followed by the rest of your height in inches\n'
                   'Ex. If you\'re 6\'3\'\', then you would first enter ' +
@@ -135,7 +134,10 @@ def pickAFunc():
                   )
             getHeightFeet = input('Please enter your height in feet\n')
             getHeightInches = input('Please enter the rest of your height in inches\n')
-            totInches = (getHeightFeet * 12 + getHeightInches)
+            print(getHeightFeet)
+            print(getHeightInches)
+            totInches = (int(getHeightFeet) * 12) + int(getHeightInches)
+            print(str(totInches))
             bmiCalc(totInches, getWeight)
             pickAFunc()
 
