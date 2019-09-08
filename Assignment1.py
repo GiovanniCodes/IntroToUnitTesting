@@ -92,7 +92,7 @@ def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
         print("Not the right type")
 
 
-def pickAFunc(funcOption, testPick):
+def pickAFunc():
     funcOption = input('Pick a function' +
                        '\n1 - BMI' +
                        '\n2 - Retirement' +
@@ -102,9 +102,6 @@ def pickAFunc(funcOption, testPick):
                        )
     if (funcOption == '1'):
 
-        if testPick:
-            return '1'
-        else:
             getWeight = input('How much do you weigh?(lbs)\n')
             print('Next, at the prompt, please enter your height'
                   'in feet, followed by the rest of your height in inches\n'
@@ -119,11 +116,6 @@ def pickAFunc(funcOption, testPick):
             pickAFunc()
 
     elif (funcOption == '2'):
-
-        if testPick:
-            return '2'
-        
-        else:
             age = input("How old are you?")
             annualSalary = input("what is your annual Salary")
             percentSaved = input("what percentage saved")
@@ -131,9 +123,6 @@ def pickAFunc(funcOption, testPick):
             retirement(age, annualSalary, percentSaved, retirementSaveGoal)
     elif (funcOption == '3'):
 
-        if testPick:
-             return '3'
-        else:
             getX1 = input('Please enter your x1 value\n')
             getY1 = input('Please enter your y1 value\n')
             getX2 = input('Please enter your x2 value\n')
@@ -141,19 +130,14 @@ def pickAFunc(funcOption, testPick):
             shortestDistance(getX1, getY1, getX2, getY2)
 
     elif (funcOption == '4'):
-        if testPick:
-            return '4'
-        else:
-             amount = input("How much was bill?")
-             guest = input("How many people")
-             splitAmount(amount, guest)
+            amount = input("How much was bill?")
+            guest = input("How many people")
+            splitAmount(amount, guest)
 
     elif (funcOption == '0'):
-        if testPick:
-            return '0'
-        else:
             sys.exit()
     else:
         pickAFunc()
+
 
 pickAFunc()
