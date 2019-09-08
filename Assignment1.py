@@ -1,20 +1,20 @@
 import math
 import sys
 
-def bmiCalc(height, weight):
 
+def bmiCalc(height, weight):
     try:
         metricWeight = float(weight) * 0.45
         metricHeight = (float(height) * 0.025)
-        bmiVal = metricWeight/(metricHeight * metricHeight)
+        bmiVal = metricWeight / (metricHeight * metricHeight)
 
-        if(bmiVal < 18.5):
+        if (bmiVal < 18.5):
             print('Underweight\n')
         elif (bmiVal >= 18.5 and bmiVal <= 24.9):
             print('Normal weight\n')
-        elif (bmiVal <= 25 and bmiVal >=29.9):
+        elif (bmiVal <= 25 and bmiVal >= 29.9):
             print('Overweight\n')
-        elif(bmiVal > 0):
+        elif (bmiVal > 0):
             print('Error - negative bmi')
         else:
             print('Obese\n')
@@ -22,17 +22,17 @@ def bmiCalc(height, weight):
         print('Error - incorrect data type entered')
 
 
-
 def shortestDistance(x1, y1, x2, y2):
-
     try:
-        sDist = math.sqrt(((float(x2) - float(x1))*(float(x2) - float(x1))) + ((float(y2) - float(y1)) * (float(y2) - float(y1))))
-        print('Shortest distance is: '+ str(sDist) +'\n')
+        sDist = math.sqrt(
+            ((float(x2) - float(x1)) * (float(x2) - float(x1))) + ((float(y2) - float(y1)) * (float(y2) - float(y1))))
+        print('Shortest distance is: ' + str(sDist) + '\n')
         pickAFunc()
 
     except ValueError:
         print('Error - incorrect data type used')
         pickAFunc()
+
 
 def splitAmount(amount, guest):
     i = 1;
@@ -41,29 +41,29 @@ def splitAmount(amount, guest):
     my_list = []
     try:
         fullAmount = float(amount) + (float(amount) * 0.15)
-        split = fullAmount/guest
+        split = fullAmount / guest
 
         if (fullAmount % 2) == 0:
             while i <= guest:
                 print("Guest " + str(i) + " will pay " + str(round(split, 2)))
-                i = i+1
+                i = i + 1
 
         else:
 
             while i <= count:
-                    tot = round(fullAmount / guest, 2);
-                    print("Guest " + str(i) + " will pay " + str(tot))
-                    my_list.append(tot)
-                    fullAmount = fullAmount - tot;
-                    guest = guest -1;
-                    i = i + 1
+                tot = round(fullAmount / guest, 2);
+                print("Guest " + str(i) + " will pay " + str(tot))
+                my_list.append(tot)
+                fullAmount = fullAmount - tot;
+                guest = guest - 1;
+                i = i + 1
             return my_list
 
     except ValueError:
         print("Not the right type")
 
-def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
 
+def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
     try:
         yearLeft = 0;
         amountTotal = 0;
@@ -79,9 +79,9 @@ def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
             yearLeft = yearLeft + 1;
             age = age + 1;
 
-            amountTotal = amountTotal +amountT + amount;
+            amountTotal = amountTotal + amountT + amount;
             print(amountTotal)
-            print("Your age "+ str(age))
+            print("Your age " + str(age))
 
         if age == 100:
             print("Dead, you didn't make the goal")
@@ -91,32 +91,39 @@ def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
     except ValueError:
         print("Not the right type")
 
-def pickAFunc():
-    funcOption = input('Pick a function'+
-                 '\n1 - BMI'+
-                 '\n2 - Retirement' +
-                 '\n3 - Shortest Distance' +
-                 '\n4 - Split the Tip'
-                 '\n0 - Exit\n'
-                 )
-    if(funcOption == '1'):
-       getWeight = input('How much do you weigh?(lbs)\n')
-       print('Next, at the prompt, please enter your height'
-             'in feet, followed by the rest of your height in inches\n'
-             'Ex. If you\'re 6\'3\'\', then you would first enter ' +
-             '6 at the prompt for feet, followed by the rest of your height in inches'
-             ', where you would enter 3\n'
-             )
-       getHeightFeet = input('Please enter your height in feet\n')
-       getHeightInches = input('Please enter the rest of your height in inches\n')
-       totInches = (getHeightFeet * 12 + getHeightInches)
-       bmiCalc(totInches, getWeight)
-       pickAFunc()
 
+def pickAFunc(funcOption, testPick):
+    funcOption = input('Pick a function' +
+                       '\n1 - BMI' +
+                       '\n2 - Retirement' +
+                       '\n3 - Shortest Distance' +
+                       '\n4 - Split the Tip'
+                       '\n0 - Exit\n'
+                       )
+    if (funcOption == '1'):
 
-    elif(funcOption == '2'):
+        if testPick:
+            return '1'
+        else:
+            getWeight = input('How much do you weigh?(lbs)\n')
+            print('Next, at the prompt, please enter your height'
+                  'in feet, followed by the rest of your height in inches\n'
+                  'Ex. If you\'re 6\'3\'\', then you would first enter ' +
+                  '6 at the prompt for feet, followed by the rest of your height in inches'
+                  ', where you would enter 3\n'
+                  )
+            getHeightFeet = input('Please enter your height in feet\n')
+            getHeightInches = input('Please enter the rest of your height in inches\n')
+            totInches = (getHeightFeet * 12 + getHeightInches)
+            bmiCalc(totInches, getWeight)
+            pickAFunc()
 
-            print('2')
+    elif (funcOption == '2'):
+
+        if testPick:
+            return '2'
+        
+        else:
             age = input("How old are you?")
             annualSalary = input("what is your annual Salary")
             percentSaved = input("what percentage saved")
@@ -124,19 +131,27 @@ def pickAFunc():
             retirement(age, annualSalary, percentSaved, retirementSaveGoal)
     elif (funcOption == '3'):
 
-        getX1 = input ('Please enter your x1 value\n')
-        getY1 = input ('Please enter your y1 value\n')
-        getX2 = input ('Please enter your x2 value\n')
-        getY2 = input ('Please enter your y2 value\n')
-        shortestDistance(getX1, getY1, getX2, getY2)
+        if testPick:
+             return '3'
+        else:
+            getX1 = input('Please enter your x1 value\n')
+            getY1 = input('Please enter your y1 value\n')
+            getX2 = input('Please enter your x2 value\n')
+            getY2 = input('Please enter your y2 value\n')
+            shortestDistance(getX1, getY1, getX2, getY2)
 
     elif (funcOption == '4'):
-            print('4')
-            amount = input("How much was bill?")
-            guest = input("How many people")
+        if testPick:
+            return '4'
+        else:
+             amount = input("How much was bill?")
+             guest = input("How many people")
+             splitAmount(amount, guest)
 
-            splitAmount(amount, guest)
     elif (funcOption == '0'):
+        if testPick:
+            return '0'
+        else:
             sys.exit()
     else:
         pickAFunc()
