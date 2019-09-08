@@ -3,28 +3,30 @@ import sys
 
 
 def bmiCalc(height, weight):
-    if(checkIfNegative(height), checkIfNegative(weight)):
-        try:
-            metricWeight = float(weight) * 0.45
-            metricHeight = (float(height) * 0.025)
-            bmiVal = metricWeight / (metricHeight * metricHeight)
-    
-            if (bmiVal < 18.5):
-                print('Underweight\n')
-            elif (bmiVal >= 18.5 and bmiVal <= 24.9):
-                print('Normal weight\n')
-            elif (bmiVal <= 25 and bmiVal >= 29.9):
-                print('Overweight\n')
-            elif (bmiVal > 0):
-                print('Error - negative bmi')
-            else:
-                print('Obese\n')
-        except ValueError:
-            print('Error - incorrect data type entered')
-            
-    else:
-        return 'Negative'
+    try:
+        if(checkIfNegative(int(height)), checkIfNegative(int(weight))):
+            try:
+                metricWeight = float(weight) * 0.45
+                metricHeight = (float(height) * 0.025)
+                bmiVal = metricWeight / (metricHeight * metricHeight)
 
+                if (bmiVal < 18.5):
+                    print('Underweight\n')
+                elif (bmiVal >= 18.5 and bmiVal <= 24.9):
+                    print('Normal weight\n')
+                elif (bmiVal <= 25 and bmiVal >= 29.9):
+                    print('Overweight\n')
+                elif (bmiVal > 0):
+                    print('Error - negative bmi')
+                else:
+                    print('Obese\n')
+            except ValueError:
+                print('Error - incorrect data type entered')
+
+        else:
+            return 'Negative'
+    except ValueError:
+        print('Error - incorrect data type entered')
 
 
 def shortestDistance(x1, y1, x2, y2):
@@ -40,75 +42,79 @@ def shortestDistance(x1, y1, x2, y2):
 
 def splitAmount(amount, guest):
     i = 1;
-    
-    if(checkIfNegative(amount) and checkIfNegative(guest)):
-        try:
-            guest = int(guest)
-            count = guest;
-            my_list = []
-            fullAmount = float(amount) + (float(amount) * 0.15)
-            split = fullAmount / guest
-    
-            if (fullAmount % 2) == 0:
-                while i <= guest:
-                    print("Guest " + str(i) + " will pay " + str(round(split, 2)))
-                    i = i + 1
-    
-            else:
-    
-                while i <= count:
-                    tot = round(fullAmount / guest, 2);
-                    print("Guest " + str(i) + " will pay " + str(tot))
-                    my_list.append(tot)
-                    fullAmount = fullAmount - tot;
-                    guest = guest - 1;
-                    i = i + 1
-                return my_list
-    
-        except ValueError:
-            print("Not the right type")
+    try:
+        if(checkIfNegative(int(amount)) and checkIfNegative(int(guest))):
+            try:
+                guest = int(guest)
+                count = guest;
+                my_list = []
+                fullAmount = float(amount) + (float(amount) * 0.15)
+                split = fullAmount / guest
 
-    else:
-        return 'Negative'
+                if (fullAmount % 2) == 0:
+                    while i <= guest:
+                        print("Guest " + str(i) + " will pay " + str(round(split, 2)))
+                        i = i + 1
 
+                else:
+
+                    while i <= count:
+                        tot = round(fullAmount / guest, 2);
+                        print("Guest " + str(i) + " will pay " + str(tot))
+                        my_list.append(tot)
+                        fullAmount = fullAmount - tot;
+                        guest = guest - 1;
+                        i = i + 1
+                    return my_list
+
+            except ValueError:
+                print("Not the right type")
+
+        else:
+            return 'Negative'
+    except ValueError:
+        print('Error - incorrect data type used')
 
 def checkIfNegative(valuePass):
     if(valuePass > 0):
         return True
     else:
         return False
-    
+
 def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
-    
-    if(checkIfNegative(age) and checkIfNegative(annualSalary)and checkIfNegative(percentSaved)and checkIfNegative(retirementSaveGoal)):
-        try:
-            yearLeft = 0;
-            amountTotal = 0;
-            age = int(age);
-            annualSalary = int(annualSalary)
-            percentSaved = float(percentSaved)
-            retirementSaveGoal = int(retirementSaveGoal)
-    
-            amount = annualSalary * (percentSaved / 100);
-            amountT = amount * 0.35;
-    
-            while amountTotal < retirementSaveGoal and age < 100:
-                yearLeft = yearLeft + 1;
-                age = age + 1;
-    
-                amountTotal = amountTotal + amountT + amount;
-                print(amountTotal)
-                print("Your age " + str(age))
-    
-            if age == 100:
-                print("Dead, you didn't make the goal")
-                return "Dead"
-    
-            return age
-        except ValueError:
-            print("Not the right type")
-    else:
-        return 'Negative'
+    try:
+        if(checkIfNegative(int(age)) and checkIfNegative(int(annualSalary))and checkIfNegative(int(percentSaved))and checkIfNegative(int(retirementSaveGoal))):
+            try:
+                yearLeft = 0;
+                amountTotal = 0;
+                age = int(age);
+                annualSalary = int(annualSalary)
+                percentSaved = float(percentSaved)
+                retirementSaveGoal = int(retirementSaveGoal)
+
+                amount = annualSalary * (percentSaved / 100);
+                amountT = amount * 0.35;
+
+                while amountTotal < retirementSaveGoal and age < 100:
+                    yearLeft = yearLeft + 1;
+                    age = age + 1;
+
+                    amountTotal = amountTotal + amountT + amount;
+                    print(amountTotal)
+                    print("Your age " + str(age))
+
+                if age == 100:
+                    print("Dead, you didn't make the goal")
+                    return "Dead"
+
+                return age
+            except ValueError:
+                print("Not the right type")
+        else:
+            return 'Negative'
+
+    except ValueError:
+        print('Error - incorrect data type used')
 
 def pickAFunc():
     funcOption = input('Pick a function' +
