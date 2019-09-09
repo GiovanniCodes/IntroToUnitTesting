@@ -7,6 +7,10 @@ For our naming process, we named the tests similar to their respective tested- f
 
 For our structure, we decided to write the unit test cases based on each of the functions that a user can choose. In this case, we will be performing 6 unit tests for each of the respective functions and functionality that the program is intended to provide.
 
+Describe your unit testing & TDD experience. What do you think of unit testing & TDD? Do you think
+it’s useful for a real project? Benefits & Drawbacks to TDD
+Giovanni Gaspard
+Unit testing and TDD is a wonderful way to have control of your program and allows you to break it down your code. It enables you to find your errors by breaking the project down into sections. It is useful for a real project and as a previous intern I know big coportatings are already using this approach. Throughout a sprint a designated tester handles the scripts to run a test for new functions created in the sprint. The benfit of Test Driven Development is the code is broken down and tested for errors. This will lead to not having a hard time to find an error later on. The drawback to me is the time needed to always have a test. Sometimes its hard to write a test for a specific function.Changes in the code mean changes to test.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 Setup and Execution Instructions:

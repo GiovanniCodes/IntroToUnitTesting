@@ -89,27 +89,27 @@ def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
                 yearLeft = 0;
                 amountTotal = 0;
                 age = int(age);
-                annualSalary = int(annualSalary)
-                percentSaved = float(percentSaved)
+
                 retirementSaveGoal = int(retirementSaveGoal)
 
-                amount = annualSalary * (percentSaved / 100);
+                amount = int(annualSalary) * (float(percentSaved) / 100);
                 amountT = amount * 0.35;
 
                 while amountTotal < retirementSaveGoal and age < 100:
                     yearLeft = yearLeft + 1;
                     age = age + 1;
+                    if age == 100:
+                        print("Dead, you didn't make the goal")
+                        return "Dead"
 
                     amountTotal = amountTotal + amountT + amount;
-                    print(amountTotal)
-                    print("Your age " + str(age))
-
-                if age == 100:
-                    print("Dead, you didn't make the goal")
-                    return "Dead"
+                    # print(amountTotal)
+                    # print("Your age "+ str(age))
+                print("Goal amount will be reached at " + str(age))
                 return age
+
             except ValueError:
-                print("Not the right type")
+                raise ValueError("Invalid arguments.")
         else:
             return 'Negative'
 
