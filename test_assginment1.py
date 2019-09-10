@@ -19,7 +19,7 @@ class TestSplitAmount(unittest.TestCase):
         self.assertNotEqual(splitAmount(20, 1), [2])
     def test_split_value_error(self):
         self.assertRaises(ValueError,splitAmount, 6 ,'g');
-        
+   
     def test_bmi_overweight(self):
         self.assertEqual(bmiCalc(72, 200), "Overweight")
     def test_bmi_underweight(self):
@@ -29,12 +29,13 @@ class TestSplitAmount(unittest.TestCase):
     def test_bmi_obese(self):
         self.assertEqual(bmiCalc(72, 480), "Obese")
     def test_bmi_value_error(self):
-        self.assertRaises(ValueError, bmiCalc, 'a', 'b', 'c')
+        self.assertRaises(ValueError, bmiCalc, 'a', 'b')
+    def test_bmi_value_error(self):
+        self.assertEqual(bmiCalc('a', 'b'), "Incorrect data")
     def test_bmi_negative(self):
         self.assertEqual(bmiCalc(72, -180), "Negative")
     def test_distance_zero(self):
         self.assertEqual(shortestDistance(1,1,1,1), 0)
     def test_distance_one(self):
-        self.assertAlmostEqual(shortestDistance(1,1,2,2), 1)
-    def test_distance_one(self):
-        self.assertAlmostEqual(shortestDistance(5,10,25,3), 21)
+        self.assertAlmostEqual(shortestDistance(1,1,2,2), 1.4, places=1)
+
