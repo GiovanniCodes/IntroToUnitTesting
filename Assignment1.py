@@ -3,7 +3,7 @@ import sys
 
 
 def bmiCalc(height, weight):
-    try:
+       try:
         if(checkIfNegative(int(height)), checkIfNegative(int(weight))):
             try:
                 metricWeight = float(weight) * 0.45
@@ -11,23 +11,29 @@ def bmiCalc(height, weight):
                 bmiVal = metricWeight / (metricHeight * metricHeight)
                 print(bmiVal)
 
-                if (bmiVal < 18.5):
+                if (bmiVal < 0):
+                    return "Negative"
+                elif (bmiVal < 18.5):
                     print('Underweight\n')
+                    return "Underweight"
                 elif (bmiVal >= 18.5 and bmiVal <= 24.9):
                     print('Normal weight\n')
-                elif (bmiVal <= 25 and bmiVal >= 29.9):
+                    return "Normal"
+                elif (bmiVal >= 25 and bmiVal <= 29.9):
                     print('Overweight\n')
-                elif (bmiVal < 0):
-                    print('Error - negative bmi')
+                    return "Overweight"
                 else:
                     print('Obese\n')
+                    return "Obese"
             except ValueError:
-                print('Error - incorrect data type entered')
+                return "Value Error"
 
         else:
             return 'Negative'
     except ValueError:
         print('Error - incorrect data type entered')
+        return "Incorrect data"
+
 
 
 def shortestDistance(x1, y1, x2, y2):
