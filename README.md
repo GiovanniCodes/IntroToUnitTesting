@@ -4,7 +4,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## Naming and Organization:
 
-For our naming process, we named the tests similar to their respective tested- functions. For example, the bmiCalc function, defined in the main program, will be named bmiCalc_test for the respective testing.
+For our naming process, we named the tests similar to their respective tested- functions. For example, the bmiCalc function, defined in the main program, will be named test_bmi_overweight for the respective testing.
 
 For our structure, we decided to write the unit test cases based on each of the functions that a user can choose. In this case, we will be performing 6 unit tests for each of the respective functions and functionality that the program is intended to provide.
 
@@ -13,6 +13,14 @@ Describe your unit testing & TDD experience. What do you think of unit testing &
 ### Giovanni Gaspard
 
 Unit testing and TDD is a wonderful way to have control of your program and allows you to break it down your code. It enables you to find your errors by breaking the project down into sections. It is useful for a real project and as a previous intern I know big coportatings are already using this approach. Throughout a sprint a designated tester handles the scripts to run a test for new functions created in the sprint. The benfit of Test Driven Development is the code is broken down and tested for errors. This will lead to not having a hard time to find an error later on. The drawback to me is the time needed to always have a test. Sometimes its hard to write a test for a specific function.Changes in the code mean changes to test.
+
+
+### Santiago Mejia
+
+Testing, in my opinion, is critical for creating effective programs. From previous internships, I've had to create test case files to make sure my code worked as intended, and to provide a solid form of documentation for the developer taking over the project that I worked on. I believe that test cases and TDD in general should be integral to all software development, particularly for the relief of other developers that depend on such information to effectively continue developing. Drawbacks, I feel that some functions won't have a readily available test, or that the changes made due to tests in the program file, will also have to be refactored and reflected on the test file, which can be time consuming depending on the size of the project/tests.
+
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## Setup and Execution Instructions:
