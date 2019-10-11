@@ -178,5 +178,3 @@ def pickAFunc():
     else:
         pickAFunc()
 
-
-pickAFunc()
