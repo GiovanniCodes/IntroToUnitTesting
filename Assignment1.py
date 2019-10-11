@@ -3,8 +3,8 @@ import sys
 
 
 def bmiCalc(height, weight):
-       try:
-        if(checkIfNegative(int(height)), checkIfNegative(int(weight))):
+    try:
+        if (checkIfNegative(int(height)), checkIfNegative(int(weight))):
             try:
                 metricWeight = float(weight) * 0.45
                 metricHeight = (float(height) * 0.025)
@@ -27,13 +27,11 @@ def bmiCalc(height, weight):
                     return "Obese"
             except ValueError:
                 return "Value Error"
-
         else:
             return 'Negative'
     except ValueError:
         print('Error - incorrect data type entered')
         return "Incorrect data"
-
 
 
 def shortestDistance(x1, y1, x2, y2):
@@ -50,7 +48,7 @@ def shortestDistance(x1, y1, x2, y2):
 def splitAmount(amount, guest):
     i = 1;
     try:
-        if(checkIfNegative(int(amount)) and checkIfNegative(int(guest))):
+        if (checkIfNegative(int(amount)) and checkIfNegative(int(guest))):
             try:
                 guest = int(guest)
                 count = guest;
@@ -82,15 +80,18 @@ def splitAmount(amount, guest):
     except ValueError:
         print('Error - incorrect data type used')
 
+
 def checkIfNegative(valuePass):
-    if(valuePass > 0):
+    if (valuePass > 0):
         return True
     else:
         return False
 
+
 def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
     try:
-        if(checkIfNegative(int(age)) and checkIfNegative(int(annualSalary))and checkIfNegative(int(percentSaved))and checkIfNegative(int(retirementSaveGoal))):
+        if (checkIfNegative(int(age)) and checkIfNegative(int(annualSalary)) and checkIfNegative(
+                int(percentSaved)) and checkIfNegative(int(retirementSaveGoal))):
             try:
                 yearLeft = 0;
                 amountTotal = 0;
@@ -122,6 +123,7 @@ def retirement(age, annualSalary, percentSaved, retirementSaveGoal):
     except ValueError:
         print('Error - incorrect data type used')
 
+
 def pickAFunc():
     funcOption = input('Pick a function' +
                        '\n1 - BMI' +
@@ -132,47 +134,47 @@ def pickAFunc():
                        )
     if (funcOption == '1'):
 
-            getWeight = input('How much do you weigh?(lbs)\n')
-            print('Next, at the prompt, please enter your height'
-                  'in feet, followed by the rest of your height in inches\n'
-                  'Ex. If you\'re 6\'3\'\', then you would first enter ' +
-                  '6 at the prompt for feet, followed by the rest of your height in inches'
-                  ', where you would enter 3\n'
-                  )
-            getHeightFeet = input('Please enter your height in feet\n')
-            getHeightInches = input('Please enter the rest of your height in inches\n')
-            print(getHeightFeet)
-            print(getHeightInches)
-            totInches = (int(getHeightFeet) * 12) + int(getHeightInches)
-            print(str(totInches))
-            bmiCalc(totInches, getWeight)
-            pickAFunc()
+        getWeight = input('How much do you weigh?(lbs)\n')
+        print('Next, at the prompt, please enter your height'
+              'in feet, followed by the rest of your height in inches\n'
+              'Ex. If you\'re 6\'3\'\', then you would first enter ' +
+              '6 at the prompt for feet, followed by the rest of your height in inches'
+              ', where you would enter 3\n'
+              )
+        getHeightFeet = input('Please enter your height in feet\n')
+        getHeightInches = input('Please enter the rest of your height in inches\n')
+        print(getHeightFeet)
+        print(getHeightInches)
+        totInches = (int(getHeightFeet) * 12) + int(getHeightInches)
+        print(str(totInches))
+        bmiCalc(totInches, getWeight)
+        pickAFunc()
 
     elif (funcOption == '2'):
-            age = input("How old are you?")
-            annualSalary = input("what is your annual Salary")
-            percentSaved = input("what percentage saved")
-            retirementSaveGoal = input("what is your retirement saving goal?")
-            retirement(age, annualSalary, percentSaved, retirementSaveGoal)
-            pickAFunc()
+        age = input("How old are you?")
+        annualSalary = input("what is your annual Salary")
+        percentSaved = input("what percentage saved")
+        retirementSaveGoal = input("what is your retirement saving goal?")
+        retirement(age, annualSalary, percentSaved, retirementSaveGoal)
+        pickAFunc()
 
     elif (funcOption == '3'):
 
-            getX1 = input('Please enter your x1 value\n')
-            getY1 = input('Please enter your y1 value\n')
-            getX2 = input('Please enter your x2 value\n')
-            getY2 = input('Please enter your y2 value\n')
-            shortestDistance(getX1, getY1, getX2, getY2)
-            pickAFunc()
+        getX1 = input('Please enter your x1 value\n')
+        getY1 = input('Please enter your y1 value\n')
+        getX2 = input('Please enter your x2 value\n')
+        getY2 = input('Please enter your y2 value\n')
+        shortestDistance(getX1, getY1, getX2, getY2)
+        pickAFunc()
 
     elif (funcOption == '4'):
-            amount = input("How much was bill?")
-            guest = input("How many people")
-            splitAmount(amount, guest)
-            pickAFunc()
+        amount = input("How much was bill?")
+        guest = input("How many people")
+        splitAmount(amount, guest)
+        pickAFunc()
 
     elif (funcOption == '0'):
-            sys.exit()
+        sys.exit()
     else:
         pickAFunc()
 
