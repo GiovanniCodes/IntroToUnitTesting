@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python test_ppa2.py'
+                sh 'python Assignment2_test.py'
             }
         }
     }
