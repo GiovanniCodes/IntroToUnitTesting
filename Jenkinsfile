@@ -10,7 +10,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'python test_assginment1.py'
-'
             }
         }
     }
