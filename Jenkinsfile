@@ -7,10 +7,16 @@ pipeline {
                 echo 'Hello testing world'
             }
         }
-        stage('Test') {
+        stage('Test 1') {
             steps {
                 sh 'python test_assignment.py'
             }
         }
+        
+        stage('Test 2') {
+           steps {
+               sh 'python test_assignment.py'
+           }
+       }
     }
 }
