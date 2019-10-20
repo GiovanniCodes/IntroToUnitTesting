@@ -1,19 +1,33 @@
 import unittest
-from Assignment1 import retirement, splitAmount
 
-def test_request_response(self):
-        response = get_users()
-        self.assertEqual(response.status_code, 508)
-        
-def test_request_response(self):
-        response = get_users()
-        self.assertEqual(response.status_code, 502)
-        
-        
-def test_request_response(self):
-        response = get_users()
-        self.assertEqual(response.status_code, 404)
-        
-def test_request_response(self):
-        response = get_users()
+from flask_test import app
+
+class testFlask(unittest.TestCase):
+    def test_distance_response(self):
+        c = app.test_client()
+        response = c.get('/distance/')
         self.assertEqual(response.status_code, 200)
+
+    def test_retirement_response(self):
+        c = app.test_client()
+        response = c.get('/retirement/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_retirement_data(self):
+        c = app.test_client()
+        response = c.get('/retirement/')
+        if response.data:
+            print('true')
+        elif response.data:
+            print('false')
+
+    def test_distance_data(self):
+        c = app.test_client()
+        response = c.get('/distance/')
+        if response.data:
+            print('true')
+        elif response.data:
+            print('false')
+
+if __name__ == "__main__":
+  unittest.main()
